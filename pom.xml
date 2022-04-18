@@ -6,6 +6,7 @@
     <groupId>org.example</groupId>
     <artifactId>WebTAF</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <build>
         <plugins>
             <plugin>
@@ -16,13 +17,24 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M6</version>
+                <configuration>
+                    <parallel>methods</parallel>
+                    <useUnlimitedThreads>true</useUnlimitedThreads>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
     <properties>
-        <property name="TEST_ENV">qa</property>
-        <property name="TEST_USER">Pavan</property>
+        <property name="ENV">qa</property>
+        <property name="USER">Pavan</property>
     </properties>
+
 
     <dependencies>
         <dependency>
@@ -108,4 +120,6 @@
             <version>2.7.0</version>
         </dependency>
     </dependencies>
+
+
 </project>

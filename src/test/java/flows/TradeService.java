@@ -19,7 +19,6 @@ public class TradeService {
     public static Response validateSingleTrade(HashMap<String, String> dateMap){
         String requestPayload = dateMap.get("RequestBody");
         response =  APIUtils.postCall(requestPayload, AppConstant.validate);
-        System.out.println("Response from validate Single Trade : "+ response.prettyPrint());
         return response;
     }
 
